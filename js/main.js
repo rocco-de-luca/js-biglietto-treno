@@ -12,29 +12,32 @@ var  numeroKm  =  parseInt ( prompt ("Quanti Km devi percorrere?" ) );
 console.log ("Km da percorrere",numeroKm + "." ) ;
 
 
-// Chiedo l' età al passeggero
-var  age  =  parseInt ( prompt ( "Qual'è la tua età" ) );
-console.log ( "Età del passeggero", age  +  "." );
-
-
-// dichiaro il prezzo del biglietto a km
-var  costoKm = 0.21;
-console.log (costoKm);
-
-var  prezzoTot =  numeroKm * costoKm ;
-console.log (prezzoTot);
-
-// sconto del 20%
-var  sconto20 = prezzoTot * 20 / 100;
-var  prezzoFinaleSconto20  =  prezzoTot  -  sconto20.toFixed(2) + '€';
-console.log ("Prezzo sconto 20%", sconto20 ) ;
-console.log ("Prezzo Finale con sconto" , prezzoFinaleSconto20 ) ;
-document.getElementById('prezzoFinaleSconto20').innerHTML = 'per i minorenni il prezzo del biglietto è ' + prezzoFinaleSconto20;
-
-
-// sconto del 40%
-var  sconto40  =  prezzoTot * 40 / 100 ;
-var  prezzoFinaleSconto40  =  prezzoTot - sconto40.toFixed(2) + '€';
-console.log ( "Prezzo sconto 40%"  ,  sconto40 ) ;
-console.log ( "Prezzo Finale con sconto" , prezzoFinaleSconto40 ) ;
-document.getElementById('prezzoFinaleSconto40').innerHTML = 'per over 65 il prezzo del tuo biglietto è ' + prezzoFinaleSconto40;
+// I ask for the number of Km
+var numKm = parseInt(prompt('how many km do you have to travel?'));
+console.log('the km to go are' + numKm);
+// I ask the passenger for her age
+var userAge = parseInt(prompt('how old are you?'));
+console.log('the age of the passenger is ' + userAge);
+//I declare the price of ticket for km
+var priceKm = 0.21;
+console.log (priceKm);
+//I calculate the total price of the trip.
+var priceTot = numKm * priceKm;
+console.log (priceTot);
+//20% discount and 40% discount
+var  discount20 = priceTot * 20 / 100;
+var  finalDiscountPrice20  =  priceTot  - discount20.toFixed(2) + '€';
+var  discount40 = priceTot * 40 / 100;
+var  finalDiscountPrice40  =  priceTot  - discount40.toFixed(2) + '€';
+if(userAge < 18 ){
+    priceTot - finalDiscountPrice20;
+    document.getElementById('price20%').innerHTML = 'for minors the ticket price is ' + finalDiscountPrice20;
+}
+else if(userAge >= 65){
+    priceTot - finalDiscountPrice40;
+    document.getElementById('price40%').innerHTML = 'for over 65s the ticket price is ' + finalDiscountPrice40;
+}
+else{
+    'the price is ' + priceTot;
+    document.getElementById('pricewithoutdiscount').innerHTML = 'price without discount ' + priceTot;
+}
