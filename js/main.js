@@ -1,16 +1,12 @@
-// VERIFICA DEL FUNZIONAMENTO DI JS
+// VERIFICATION OF THE OPERATION OF JS
 console.log ( 'Test verifica JS' ) ;
 
-// Il programma deve chiedere all'utente il numero di chilometri che vuole percorrere e il passeggero del passeggero.
-// Sulla base di queste informazioni dobbiamo calcolare il prezzo totale del viaggio.
-// Il prezzo del biglietto è definito in base ai km (0,21 € al km), ma è applicato uno sconto del 20% per i minori e del 40% per gli over 65.
-// Mostrare uno schermo il prezzo del biglietto, indicando anche se è stato applicato un eventuale sconto.
-
-// Chiedo il numero di Km
-
-var  numeroKm  =  parseInt ( prompt ("Quanti Km devi percorrere?" ) );
-console.log ("Km da percorrere",numeroKm + "." ) ;
-
+/**
+ * The program must ask the user for the number of kilometers he wants to travel and the age of the passenger.
+ Based on this information, I calculate the total trip price.
+ The ticket price is defined on the basis of km (€ 0.21 per km), but a discount of 20% for minors and 40% for over 65s is applied.
+ I show the ticket price on the screen, also indicating whether a discount has been applied.
+ */
 
 // I ask for the number of Km
 var numKm = parseInt(prompt('how many km do you have to travel?'));
